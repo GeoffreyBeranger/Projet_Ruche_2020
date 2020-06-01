@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteRule ^([a-zA-Z0-9\-\_]+)$ $1.php
+RewriteRule administration/([a-zA-Z0-9\-\_]+)$ administration/$1.php
+RewriteRule api/([a-zA-Z0-9\-\_]+)$ api/$1.php
+
+# Régle de réécriture pour channels feeds
+RewriteRule ^channels/([0-9]+)/feeds.([a-zA-Z]+)$   api/feeds.php?channelId=$1&type=$2 [QSA]

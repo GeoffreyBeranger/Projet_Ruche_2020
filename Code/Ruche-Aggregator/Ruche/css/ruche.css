@@ -1,0 +1,100 @@
+ /*  feuille de style version 1 du site projet Ruche     	*/
+ /*  Auteur Philippe SIMIER  Juillet 2018               	*/
+ /*  											          	*/
+ 
+ 
+
+ /* Definition du corps de la page                          */
+
+body {
+    background-image: url(fond.svg);
+    background-repeat: repeat-x;
+    background-repeat-x: repeat;
+    background-repeat-y: no-repeat;
+    background-position: 0 100%;
+    background-position-x: 0px;
+    background-position-y: 100%;
+    -webkit-background-size: auto 230px;
+    background-size: auto 230px;
+    background-attachment: fixed;
+}
+
+.popin {
+		background-color: #fff;
+		border-radius: 8px;
+		box-shadow: 0 0 20px #999;
+		padding: 10px;
+		margin-top: 10px; 
+
+}
+
+/* Link the series colors to axis colors */
+
+.highcharts-axis.highcharts-color-0 .highcharts-axis-line {
+	stroke: #7cb5ec;
+}
+
+.highcharts-axis.highcharts-color-0 text {
+	fill: #7cb5ec;
+}
+
+.highcharts-yaxis .highcharts-axis-line {
+	stroke-width: 1px;
+}
+
+#customPopup 
+{
+    position: fixed;
+    display: none;
+    left: 50%;
+    top: 50%;
+    z-index: 2000;
+    padding: 20px;
+    width: 560px;
+    background-color: #fff;
+    color: #202020;
+    border-radius: 8px;
+	box-shadow: 0 0 20px #999;
+}
+
+#grayBack 
+{
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: black;
+     z-index: 1999;
+     opacity: 0.3;
+}
+ 
+
+/* page centrée largeur 1024  fond blanc*/
+#page {
+        Background-Color: #FFF;
+        margin: 0 auto;
+        padding: 0;
+		width: 1098px;
+        border-color:#323232 #323232 #323232;
+        border-style:solid;
+        border-width:1px 1px 1px;
+		text-align: left;
+ }
+
+/* la div id contenu  */
+#contenu {
+    margin-top: 5px;
+    min-height: 400px;
+ }
+
+a {
+	color:#000;
+}
+
+
+
+
+
+
+

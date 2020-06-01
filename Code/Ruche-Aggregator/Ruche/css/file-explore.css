@@ -1,0 +1,200 @@
+.file-list, .file-list ul{
+    list-style-type: none;
+    font-size:1em;
+    line-height:1.8em;
+    margin-left:10px;
+    padding-left:14px;
+    border-left:1px dotted #aaa;
+}
+.file-list li{
+    position: relative;
+    padding-left:25px;
+}
+.file-list li a{
+    text-decoration: none;
+    color:#444;  
+}
+.file-list li a:before{
+    display:block;
+    content: " ";
+    width:10px;
+    height:1px;
+    position:absolute;
+    border-bottom:1px dotted #aaa;
+    top:.6em;
+    left:-14px;
+}
+
+/* Lien data */
+.file-list li:before{
+    list-style-type: none;
+    font-family: FontAwesome;
+    display:block;
+    content:'\f1fe';
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:20px;
+    height:20px;
+    font-size:1.3em;
+    color:#555;
+}
+/* Lien Analysis */
+.file-list li.analysis:before{
+    list-style-type: none;
+    font-family: FontAwesome;
+    display:block;
+    content:'\f080';
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:20px;
+    height:20px;
+    font-size:1.3em;
+    color:#555;
+}
+
+
+.file-list .folder-root{
+    list-style-type: none;
+}
+.file-list .folder-root a{
+    text-decoration:none;
+}
+
+/* répertoire ruche */
+.file-list .ruche:before{
+    color:#FFD04E;
+    content: "\f187";
+}
+/* Répertoire ruche ouverte */
+.file-list .ruche.open:before{
+    content: "\f187";
+}
+
+/* répertoire weather */
+.file-list .weather:before{
+    color:#FFD04E;
+    content: "\f185";
+}
+/* Répertoire weather ouverte */
+.file-list .weather.open:before{
+    content: "\f185";
+}
+
+/* répertoire objet */
+.file-list .objet:before{
+    color:#FFD04E;
+    content: "\f1b2";
+}
+/* Répertoire objet ouvert */
+.file-list .objet.open:before{
+    content: "\f1b2";
+}
+
+
+li.folder-root ul{
+    transition: all .3s ease-in-out;
+    overflow:hidden;
+}
+li.folder-root.closed>ul{
+   opacity:0;
+   max-height:0px;
+}
+li.folder-root.open>ul{
+   opacity:1;
+   display:block;
+   max-height:1000px;
+}
+/*
+code des icones:
+http://partelya.com/wp-content/themes/thegem/fonts/icons-list-fontawesome.html
+
+*/
+.file-list li.urllink a{
+    text-decoration:none;
+}
+.file-list li.urllink a:before{
+    display:block;
+    content: " ";
+    width:10px;
+    height:1px;
+    position:absolute;
+    border-bottom:1px dotted #aaa;
+    top:.6em;
+    left:-14px;
+}
+.file-list li.urllink:before{
+     list-style-type: none;
+    font-family: FontAwesome;
+    display:block;
+    content:'\f045';
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:20px;
+    height:20px;
+    font-size:1.3em;
+    color:#555;
+}
+
+.file-list .folder-data{
+    list-style-type: none;
+}
+.file-list .folder-data a{
+    text-decoration:none;
+}
+
+/* répertoire data */
+.file-list .folder-data:before{
+    color:#FFD04E;
+    content: "\f1fe";
+}
+/* Répertoire data */
+.file-list .folder-data.open:before{
+    content: "\f1fe";
+}
+li.folder-data ul{
+    transition: all .3s ease-in-out;
+    overflow:hidden;
+}
+li.folder-data.closed>ul{
+   opacity:0;
+   max-height:0px;
+}
+li.folder-data.open>ul{
+   opacity:1;
+   display:block;
+   max-height:1000px;
+}
+
+
+.file-list .folder-matlab{
+    list-style-type: none;
+}
+.file-list .folder-matlab a{
+    text-decoration:none;
+}
+
+/* répertoire matlab */
+.file-list .folder-matlab:before{
+    color:#FFD04E;
+    content: "\f080";
+}
+/* Répertoire matlab */
+.file-list .folder-matlab.open:before{
+    content: "\f080";
+}
+li.folder-matlab ul{
+    transition: all .3s ease-in-out;
+    overflow:hidden;
+}
+li.folder-matlab.closed>ul{
+   opacity:0;
+   max-height:0px;
+}
+li.folder-matlab.open>ul{
+   opacity:1;
+   display:block;
+   max-height:1000px;
+}
