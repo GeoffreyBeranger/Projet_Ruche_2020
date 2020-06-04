@@ -1,4 +1,4 @@
-/**
+<!-- /**
  * \file      lang.conf.php
  * \author    G.BÉRANGER
  * \version   1.0
@@ -7,7 +7,7 @@
  *
  * \details     Ce fichier récupère la langue de l'utilisateur depuis la variable de session
  *              puis instancie le fichier langue en fonction de cette variable
- */
+ */ -->
 <?php
 
 include "authentification/authcheck.php" ;
@@ -18,7 +18,7 @@ $Lang= $_SESSION["language"]; // Récupération de la variable de session qui es
 if(isset($Lang) and $Lang!==''){
   $lang_file = 'lang.'.$Lang.'.php';
 }else{
-  $lang_file = 'lang.ch.php';
+  $lang_file = 'lang.EN.php';
 }
 
   include_once 'lang/'.$lang_file;

@@ -1,4 +1,4 @@
-/**
+<!-- /**
  * \file      react.php
  * \author    G.BÉRANGER
  * \version   1.0
@@ -11,7 +11,7 @@
  *             les informations vont etre recupérées dans la BDD et affichées dans le formulaire puis ensuite mis a jour dans la bdd
  *             lorsque l'utilisateur va valider le formulaire les données entrées vont etre vérifiées et un message d'erreur s'affichera en cas de probleme
  *             Cette s'adapte en fonction de la langue de l'utilisateur
- */
+ */ -->
 
 <?php
 include "authentification/authcheck.php" ;
@@ -26,8 +26,11 @@ use Aggregator\Support\Api;
 use Aggregator\Support\Str;
 use Aggregator\Support\Form;
 
+
+
 $bdd = Api::connexionBD(BASE, $_SESSION['time_zone']);
 $error = "";
+$afficher = false;
 
 	//------------si des données  sont soumises on les enregistre dans la table data.reacts ---------
 	if( !empty($_POST['envoyer']) && $_SESSION['tokenCSRF'] === $_POST['tokenCSRF'] && $_POST['field_number']!== '' && $_POST['channel_id']!== ''){
@@ -96,8 +99,14 @@ $error = "";
 		}catch (\PDOException $ex)
 		{
 			$error = $ex->getMessage();
-		}
+			if(Str::contains($error, "Duplicate entry"))
+			{
 
+			$error = "Un react avec le meme nom a déjà été créé";
+			$afficher = true;
+
+		  }
+		}
 	}
 	// -------------- sinon création d'un objet react et d'un selecteur field_number  -----------------------------
 
@@ -210,6 +219,16 @@ $error = "";
 		<script>
 
 		$(document).ready(function(){
+			<?php
+
+			if($afficher)
+			{
+
+				echo "$('#ModalCenter').modal('show');";
+
+			}
+
+			?>
 
 			// when a channel is changed
 			$('#channel_id').change(function(){
@@ -236,7 +255,6 @@ $error = "";
 		<div class="row">
 			<div class="col-md-6 col-sm-12 col-12">
 				<div class="popin">
-					<?php echo '<p style="color: #ff0000;">' . $error . '</p>'; ?>
 					<form class="form-horizontal" method="post" action="<?php echo $_SERVER['SCRIPT_NAME'] ?>" name="configuration" >
 							<?php
 
@@ -249,7 +267,7 @@ $error = "";
 
 								if($_SESSION['droits'] > 1) //  un selecteur pour les administrateur
 									echo Form::select("user_id", $selectUser, "User", $react->user_id);
-								else // un selecteur pour les utilisateurs lambda 
+								else // un selecteur pour les utilisateurs lambda
 									echo Form::hidden("user_id", $react->user_id );
 
 								$options = array( 'class' => 'form-control');
@@ -315,4 +333,25 @@ $error = "";
 		<?php require_once '../piedDePage.php'; ?>
 	</div>
 
+	<!-- Fenêtre Modal -->
+	<div class="modal" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenter" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+			<h5 class="modal-title" id="ModalLongTitle">Message !</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			</div>
+			<div class="modal-body" id="modal-contenu">
+			<?php echo '<p style="color: #ff0000;">' . $error . '</p>'; ?>
+			</div>
+			<div class="modal-footer">
+				
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+		</div>
+	</div>
+	<!--Fin de fenêtre Modal -->
 </body>

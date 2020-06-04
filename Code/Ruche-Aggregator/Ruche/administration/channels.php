@@ -1,4 +1,4 @@
-/**
+<!-- /**
  * \file      channels.php
  * \author    G.BÉRANGER
  * \version   1.0
@@ -8,7 +8,7 @@
  * \details    Page qui affiche un tableau générer avec l'outil dataTables et qui va chercher
  *             les informations depuis la base de données.
  *             Cette page s'adapte en fonction de la langue de l'utilisateur.
- */
+ */ -->
 
 <?php
 include "authentification/authcheck.php" ;

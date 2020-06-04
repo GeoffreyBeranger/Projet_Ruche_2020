@@ -1,4 +1,4 @@
-/**
+<!-- /**
  * \file      lang.EN.php
  * \author    G.BÉRANGER
  * \version   1.0
@@ -7,7 +7,7 @@
  *
  * \details    Les champs sont des tableaux dans lesquels se trouvent chacunes des traductions
  *
- */
+ */ -->
 
 <?php
 
@@ -66,12 +66,12 @@ $lang['select_interval'] = array('on_insertion' => "On data insertion",
                          '60' =>"Every 60 minutes" );
 
 
-$lang['select_condition'] = array(	'gt' => 'is greater than',
-                                    'gte' => 'is greater or equal to',
-                                    'lt' => 'is less than',
-                                    'lte' => 'is less than or equal',
-                                    'eq' =>  'is equal to',
-                                    'neq' => 'is not equal' );
+$lang['select_condition'] = array(	'>' => 'is greater than',
+                                    '>=' => 'is greater or equal to',
+                                    '<' => 'is less than',
+                                    '<=' => 'is less than or equal',
+                                    '=' =>  'is equal to',
+                                    '≠' => 'is not equal' );
 
 $lang['select_react_type'] = array('0'=>'Run action only the first time the condition is met',
                                   '1' =>'Run action each time condition is met');
